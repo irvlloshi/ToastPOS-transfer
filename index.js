@@ -27,10 +27,10 @@ app.post('/webhooks/dtmf', (req, res) => {
 		case '2':
 			actions.push({
 				action: 'connect',
-				from: 16032064794,
+				from: 16032064794, // Replace with your Nexmo Number
 				endpoint: [{
 				type: 'phone',
-				number: 18576540469}]
+				number: 18576540469}] // Replace with external cell phone number
 			});
 			break;
 		case '3':
@@ -44,10 +44,10 @@ app.post('/webhooks/dtmf', (req, res) => {
 		case '4':
 			actions.push({
 				action: 'connect',
-				from: 18576540469,
+				from: 18576540469, // Replace with caller's cell phone number so that it is passed during time of transfer
 				endpoint: [{
 				type: 'vbc',
-				extension: 599}]
+				extension: 599}] // Replace with your extension
 			});
 		}
 	ncco = actions.concat(mainMenu(req));
